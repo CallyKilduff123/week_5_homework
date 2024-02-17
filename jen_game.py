@@ -39,7 +39,7 @@ if opponent_selection == 1:
     # list function creates a list storing each key-value pair as an item and tuple
     # choice function randomly chooses a key-value tuple in the list and the choice is stored in cpu_choice variable
 
-    cpu_choice = choice(list(original_moves.keys()))
+    cpu_choice = choice(list(original_moves))
 
     # The play function takes three arguments when invoked:
     # original_moves: a dictionary containing available moves

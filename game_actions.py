@@ -1,4 +1,5 @@
 from getpass import getpass
+from random import choice
 
 
 def choose_move(moves_dictionary):
@@ -25,7 +26,7 @@ def play(moves_dictionary, player_move, opponent_move):
 
     if player_move == opponent_move:
 
-        print(f'\nIt\'s a tie!')
+        print(f'\n\u2666 It\'s a tie! \u2666')
 
     elif (moves_dictionary[player_move].lower(), moves_dictionary[opponent_move].lower()) in winning_pairs:
 
@@ -34,3 +35,14 @@ def play(moves_dictionary, player_move, opponent_move):
     else:
 
         print('\nPlayer 1, you lose!')
+
+
+if __name__ == '__main__':
+
+    # Assigns a dictionary of moves to a variable
+    original_moves = {'R': 'Rock', 'P': 'Paper', 'S': 'Scissors'}
+
+    player_move = choose_move(original_moves)
+    cpu_choice = choice(list(original_moves))
+
+    play(original_moves, player_move, cpu_choice)
