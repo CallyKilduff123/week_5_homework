@@ -1,32 +1,34 @@
-import random
+# imports the choice function from the random module
+from random import choice
+# imports game_actions module
 import game_actions
 
-# Assigned a dictionary of player moves to a variable
+# Assigns a dictionary of moves to a variable
 original_moves = {'R': 'Rock', 'P': 'Paper', 'S': 'Scissors'}
 
-# Printed a string of choices for the player
+# Prints a string about move choices for the player
 print(f'Let\'s play Rock, Paper, Scissors!\n\nR - Rock\nP - Paper\nS - Scissors')
 
-# The input function requests a letter from the player and stores it in a variable, player_choice
-player_choice = input('\nEnter your letter choice: ').capitalize()
+# The input function requests a letter from the player and stores it in variable, player_choice
+player_choice = input('\nEnter a letter: ').strip().capitalize()
 
-# while the length of the player's choice is not equal to 1 or is a decimal 0-9, execute this code
-while len(player_choice) != 1 or player_choice.isdecimal():
+# while the letter in player_choice is not in the keys of the original_moves dictionary, execute this code block
+while player_choice not in original_moves.keys():
 
-    # Requests the player's choice again and reminds them of entering one letter
-    player_choice = input('Please enter one letter: ').capitalize()
+    # Input function requests the player's choice again with a reminder and reassigns the new value to the variable
+    # strip function removes whitespaces before or after the input's string
+    # capitalize function converts the first letter of the input's string into a capital letter
+    player_choice = input('Please enter one letter - r, p, s: ').strip().capitalize()
 
+# items method returns the original_moves dictionary as key-value pairs
+# list function creates a list storing each key-value pair as an item and tuple
+# choice function randomly chooses a key-value tuple in the list and the choice is stored in cpu_choice variable
+cpu_choice = choice(list(original_moves.items()))
 
-for index_move, key in enumerate(original_moves.items()):
+# The play function takes three arguments when invoked:
+# original_moves: a dictionary containing available moves
+# player_choice: a single letter input representing the player's move
+# cpu_choice: a tuple containing a key-value pair representing the CPU's move
 
-    moves_list = list(original_moves.items())
-    opponent = random.choice(moves_list)
-
-    if player_choice == key[0]:
-
-        print(f'\nYou: {key[1].upper()} vs. Opponent: {opponent[1].upper()}')
-
-        opponent_move = moves_list.index(opponent)
-
-        game_actions.play(index_move, opponent_move)
-
+# The play function executes a single game and returns an outcome between the player and opponent
+game_actions.play(original_moves, player_choice, cpu_choice)

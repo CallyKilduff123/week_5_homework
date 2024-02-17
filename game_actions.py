@@ -1,23 +1,17 @@
+def play(moves_dictionary, player_move, opponent_move):
 
-def play(player_index, opponent_index):
+    winning_pairs = [('rock', 'scissors'), ('paper', 'rock'), ('scissors', 'paper')]
 
-    if player_index == opponent_index:
+    print(f'\nYou: {moves_dictionary[player_move].upper()} vs. Opponent: {opponent_move[1].upper()}')
+
+    if player_move == opponent_move[0]:
 
         print(f'\nIt\'s a tie!')
 
-    elif player_index == 0 and opponent_index == 2:
-
-        print('\nYou Win!')
-
-    elif player_index == 1 and opponent_index == 0:
-
-        print('\nYou Win!')
-
-    elif player_index == 2 and opponent_index == 1:
+    elif (moves_dictionary[player_move].lower(), opponent_move[1].lower()) in winning_pairs:
 
         print('\nYou Win!')
 
     else:
+
         print('\nYou lose!')
-
-
