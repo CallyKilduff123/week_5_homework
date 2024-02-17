@@ -19,21 +19,6 @@ print('\n', '~' * 15, 'player 1'.upper(), '~' * 15)
 
 player1 = game_actions.choose_move(original_moves)
 
-# # Prints a string about move choices for the player
-# print(f'\nChoose your move\nR - Rock\nP - Paper\nS - Scissors')
-#
-# # The input function requests a letter from the player and stores it in variable, player_choice
-# player_choice = getpass('\nEnter a letter: ').strip().capitalize()
-
-
-# # while the letter in player_choice is not in the keys of the original_moves dictionary, execute this code block
-# while player_choice not in original_moves.keys():
-#
-#     # Input function requests the player's choice again with a reminder and reassigns the new value to the variable
-#     # strip function removes whitespaces before or after the input's string
-#     # capitalize function converts the first letter of the input's string into a capital letter
-#     player_choice = getpass('Please enter one letter - r, p, s: ').strip().capitalize()
-
 if opponent_selection == 1:
     # items method returns the original_moves dictionary as key-value pairs
     # list function creates a list storing each key-value pair as an item and tuple

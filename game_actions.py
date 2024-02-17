@@ -42,7 +42,7 @@ if __name__ == '__main__':
     # Assigns a dictionary of moves to a variable
     original_moves = {'R': 'Rock', 'P': 'Paper', 'S': 'Scissors'}
 
-    player_move = choose_move(original_moves)
+    player = choose_move(original_moves)
     cpu_choice = choice(list(original_moves))
 
-    play(original_moves, player_move, cpu_choice)
+    play(original_moves, player, cpu_choice)
