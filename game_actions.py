@@ -17,7 +17,7 @@ def choose_move(moves_dictionary):
     return player_choice
 
 
-def play(moves_dictionary, player_move, opponent_move):
+def play(moves_dictionary, player_move, opponent_move, player_wins, opponent_wins):
 
     winning_pairs = [('rock', 'scissors'), ('paper', 'rock'), ('scissors', 'paper')]
 
@@ -28,13 +28,23 @@ def play(moves_dictionary, player_move, opponent_move):
 
         print(f'\n\u2666 It\'s a tie! \u2666')
 
+        return player_wins, opponent_wins
+
     elif (moves_dictionary[player_move].lower(), moves_dictionary[opponent_move].lower()) in winning_pairs:
 
         print('\nPlayer 1, you win! \u2665 \u2665 \u2665')
 
+        player_wins += 1
+
+        return player_wins, opponent_wins
+
     else:
 
         print('\nPlayer 1, you lose!')
+
+        opponent_wins += 1
+
+        return player_wins, opponent_wins
 
 
 if __name__ == '__main__':
