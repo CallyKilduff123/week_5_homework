@@ -1,0 +1,2 @@
+import functions_RPS
+import random

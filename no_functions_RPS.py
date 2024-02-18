@@ -1,5 +1,7 @@
 import random
 
+# TODO - create a game of Rock, Paper, Scissors
+
 # TODO - Prompt the user to enter a value: R, P or S:
 user_score = 0
 computer_score = 0
@@ -44,7 +46,7 @@ while True:
 
     #  TODO determine the winner of that round
 
-    if user_input == 'R' and computer_input == 2 or user_input == 'P' and computer_input == 0 or user_input == 'S' and computer_input == 1:
+    if (user_input == 'R' and computer_input == 2) or (user_input == 'P' and computer_input == 0) or (user_input == 'S' and computer_input == 1):
         winner = user_input
         print("You win!")
     elif user_input == computer_input:
