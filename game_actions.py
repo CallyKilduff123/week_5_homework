@@ -4,7 +4,7 @@ from random import choice
 
 def choose_move(moves_dictionary):
     # Prints a string about move choices for the player
-    print(f'\nChoose your move\nR - Rock\nP - Paper\nS - Scissors')
+    print(f'Choose your move\nR - Rock\nP - Paper\nS - Scissors')
     # The input function requests a letter from the player and stores it in variable, player_choice
     player_choice = getpass('\nEnter a letter: ').strip().capitalize()
     # while the letter in player_choice is not in the keys of the original_moves dictionary, execute this code block
@@ -21,8 +21,8 @@ def play(moves_dictionary, player_move, opponent_move, player_wins, opponent_win
 
     winning_pairs = [('rock', 'scissors'), ('paper', 'rock'), ('scissors', 'paper')]
 
-    print(f'\nYou \u25BA {moves_dictionary[player_move].upper()} vs. {moves_dictionary[opponent_move].upper()} '
-          '\u25C4 Opponent')
+    print('\n','~' * 15, 'GAME', '~' * 15, f'\nYou \u25BA {moves_dictionary[player_move].upper()} vs. '
+                                      f'{moves_dictionary[opponent_move].upper()} \u25C4 Opponent')
 
     if player_move == opponent_move:
 
@@ -55,4 +55,4 @@ if __name__ == '__main__':
     player = choose_move(original_moves)
     cpu_choice = choice(list(original_moves))
 
-    play(original_moves, player, cpu_choice)
+    # play(original_moves, player, cpu_choice)

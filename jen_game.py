@@ -13,7 +13,6 @@ play_again = 'y'
 
 while play_again == 'y':
 
-    print(player1_wins, cpu_wins, player2_wins)
     opponent_selection = int(input('\nWho do you want to play against?\n\n1. CPU\n2. Player 2\n\nNumber: ').strip())
 
     while opponent_selection not in [1, 2]:
@@ -42,7 +41,9 @@ while play_again == 'y':
         # The play function executes a single game and returns an outcome between the player and opponent
         player1_wins, cpu_wins = game_actions.play(original_moves, player1, cpu_choice, player1_wins, cpu_wins)
 
-        play_again = input('Do you want to play again? Y or N: ').lower()
+        print('\n', '~' * 15, 'WINS', '~' * 15, f'\nPlayer 1: {player1_wins}\nPlayer 2: {player2_wins}\nCPU: {cpu_wins}')
+
+        play_again = input('\nDo you want to play again? Y or N: ').lower()
 
     else:
 
@@ -52,4 +53,8 @@ while play_again == 'y':
 
         player1_wins, player2_wins = game_actions.play(original_moves, player1, player2, player1_wins, player2_wins)
 
-        play_again = input('Do you want to play again? Y or N: ').lower()
+        print('\n', '~' * 15, 'WINS', '~' * 15,
+              f'\nPlayer 1: {player1_wins}\nPlayer 2: {player2_wins}\nCPU: {cpu_wins}')
+
+        play_again = input('\nDo you want to play again? Y or N: ').lower()
+
