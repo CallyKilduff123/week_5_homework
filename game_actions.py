@@ -78,6 +78,8 @@ def ask_play(player1_score, player2_score, cpu_score):
         return 1
 
     elif play_again_choice == '2':
+        # The while True loop creates an infinite loop to execute this block of code
+        # It will continue until exited by a statement like break or return or the exit_game function
         while True:
             print('\n{:7s} {:7s} {:7s} {:7s}'.format(' ' * 7, 'Player1', 'Player2', 'CPU'))
             print('{:7s} {:7s} {:7s} {:7s}'.format(' ' * 7, '-' * 7, '-' * 7, '-' * 7))
