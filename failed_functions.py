@@ -37,9 +37,11 @@ def computer():
 
 
 #  TODO determine the winner of that round
-# This is not working as a function - only returns computer wins - it is not reading the answers
 
-
+# unlike above functions, this one is not independent
+# it requires the input from previous functions to run
+# these are passed as placeholder parameters on defining function
+# it returns 3 scores
 def win_round(player1, player2, user_score, computer_score, draws):
     if (player1 == 'R' and player2 == 'S') or \
             (player1 == 'P' and player2 == 'R') or \
@@ -56,21 +58,6 @@ def win_round(player1, player2, user_score, computer_score, draws):
     return user_score, computer_score, draws
 
 
-  # TODO keep score
-
-# def keep_score(winner, computer_score, user_score, draws):
-#     # user_score = 0
-#     # computer_score = 0
-#     # draws = 0
-#     if winner == 'user':
-#         user_score += 1
-#     if winner == 'computer':
-#         computer_score += 1
-#     if winner is None:
-#         draws += 1
-#     print(f"You: {user_score}, Computer: {computer_score}, Tied games: {draws}")
-    # return computer_score, user_score, draws
-
 
 
     # TODO loop the game
@@ -78,13 +65,6 @@ def win_round(player1, player2, user_score, computer_score, draws):
 # player1 = user()
 # player2 = computer()
 # determine_winner = win_round(player1, player2, user_score, computer_score, draws)
-
-
-
-
-
-
-
 
 
 
