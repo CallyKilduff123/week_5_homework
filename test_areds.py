@@ -60,5 +60,3 @@ def risk_score(score):
         print("5 year risk of developing advanced AMD = 25%")
     else:
         print("5 year risk of developing advanced AMD = 50%")
-    amd = sum(score)
-    return amd
