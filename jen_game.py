@@ -1,4 +1,5 @@
 # imports the choice function from the random module
+
 from random import choice
 # imports game_actions module
 import game_actions
@@ -6,18 +7,14 @@ import game_actions
 # Prints a string introduction to the game
 print(f'Let\'s play Rock, Paper, Scissors!')
 
-player1_wins = 0
-cpu_wins = 0
-player2_wins = 0
-play_again = 'y'
+player1_wins = {'Wins': 0, 'Ties': 0, 'Losses': 0}
+cpu_wins = {'Wins': 0, 'Ties': 0, 'Losses': 0}
+player2_wins = {'Wins': 0, 'Ties': 0, 'Losses': 0}
+play_again = 1
 
-while play_again == 'y':
+while play_again == 1:
 
-    opponent_selection = int(input('\nWho do you want to play against?\n\n1. CPU\n2. Player 2\n\nNumber: ').strip())
-
-    while opponent_selection not in [1, 2]:
-
-        opponent_selection = int(input('\nChoose number 1 or 2: ').strip())
+    opponent_selection = game_actions.choose_opponent()
 
     print('\n', '~' * 15, 'player 1'.upper(), '~' * 15)
 
@@ -41,9 +38,10 @@ while play_again == 'y':
         # The play function executes a single game and returns an outcome between the player and opponent
         player1_wins, cpu_wins = game_actions.play(original_moves, player1, cpu_choice, player1_wins, cpu_wins)
 
-        print('\n', '~' * 15, 'WINS', '~' * 15, f'\nPlayer 1: {player1_wins}\nPlayer 2: {player2_wins}\nCPU: {cpu_wins}')
+        print('\n', '~' * 15, 'WINS', '~' * 15)
+        print(f'\nPlayer 1: {player1_wins['Wins']} | Player 2: {player2_wins['Wins']} | CPU: {cpu_wins['Wins']}')
 
-        play_again = input('\nDo you want to play again? Y or N: ').lower()
+        play_again = game_actions.ask_play(player1_wins, player2_wins, cpu_wins)
 
     else:
 
@@ -54,7 +52,6 @@ while play_again == 'y':
         player1_wins, player2_wins = game_actions.play(original_moves, player1, player2, player1_wins, player2_wins)
 
         print('\n', '~' * 15, 'WINS', '~' * 15,
-              f'\nPlayer 1: {player1_wins}\nPlayer 2: {player2_wins}\nCPU: {cpu_wins}')
+              f'\nPlayer 1: {player1_wins['Wins']} | Player 2: {player2_wins['Wins']} | CPU: {cpu_wins['Wins']}')
 
-        play_again = input('\nDo you want to play again? Y or N: ').lower()
-
+        play_again = game_actions.ask_play(player1_wins, player2_wins, cpu_wins)
