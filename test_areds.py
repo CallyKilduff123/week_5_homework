@@ -43,7 +43,6 @@ def risk_factors_LE():
 # TODO 3 - add up points from both eyes
 def total(right, left):
     add = (right + left)
-    # final = sum(add)
     print(f"Total Score = {sum(add)}")
     return add
 

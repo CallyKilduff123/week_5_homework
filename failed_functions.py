@@ -26,7 +26,6 @@ def user():
 
 def computer():
     computer_input = random.choice(options)
-    # computer_input = random.randint(0, 2)
     if computer_input == 'R':
         print("Computer chose: 'Rock'")
     elif computer_input == 'P':
@@ -41,7 +40,10 @@ def computer():
 # unlike above functions, this one is not independent
 # it requires the input from previous functions to run
 # these are passed as placeholder parameters on defining function
-# it returns 3 scores
+# it doesn't matter what they say as long as they are used in the function
+# when called - these palceholders will be replaced by the above functions
+# it returns 3 scores, these will be needed down the line
+# if you don't return them - they will be stuck within the function forever
 def win_round(player1, player2, user_score, computer_score, draws):
     if (player1 == 'R' and player2 == 'S') or \
             (player1 == 'P' and player2 == 'R') or \
@@ -61,10 +63,12 @@ def win_round(player1, player2, user_score, computer_score, draws):
 
 
     # TODO loop the game
+# attempted to play the game by importing functions into a function. It did not work
+# lots of deleting code but this was one legacy effort
 # def play_game():
-# player1 = user()
-# player2 = computer()
-# determine_winner = win_round(player1, player2, user_score, computer_score, draws)
+#   player1 = user()
+#   player2 = computer()
+#   determine_winner = win_round(player1, player2, user_score, computer_score, draws)
 
 
 
