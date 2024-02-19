@@ -1,8 +1,3 @@
-
-# AREDS trial looked at 5 year risk of developing advanced AMD based on fundus appearance
-# risk factors = large drusen and pigment changes
-
-# tally points for RE
 def risk_factors_RE():
     drusen_re = 0
     pigment_re = 0
@@ -38,10 +33,14 @@ def risk_factors_LE():
         print("0 points")
     return drusen_le, pigment_le
 
-# could tally points for BE by placing above in 1 function
+
+def total(right, left):
+    add = (right + left)
+    # final = sum(add)
+    print(f"Total Score = {sum(add)}")
+    return add
 
 
-# print risk based on number of points
 def risk_score(score):
     if sum(score) == 0:
         print("5 year risk of developing advanced AMD = 0.5%")
@@ -53,18 +52,5 @@ def risk_score(score):
         print("5 year risk of developing advanced AMD = 25%")
     else:
         print("5 year risk of developing advanced AMD = 50%")
-    return sum(score)
-
-
-# if __name__ == "__main__":
-# RE = risk_factors_RE()
-# LE = risk_factors_LE()
-# score = RE + LE
-# print("-" * 50)
-# print(f"Total Score = {sum(score)}")
-# print("-" * 50)
-# risk = risk_score(score)
-
-
-
-
+    amd = sum(score)
+    return amd

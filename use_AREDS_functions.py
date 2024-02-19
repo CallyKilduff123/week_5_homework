@@ -9,3 +9,5 @@ print("-" * 50)
 print(f"Total Score = {sum(score)}")
 print("-" * 50)
 risk = AREDS_functions.risk_score(score)
+
+
