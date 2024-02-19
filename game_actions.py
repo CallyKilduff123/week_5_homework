@@ -89,15 +89,16 @@ def ask_play(player1_score, player2_score, cpu_score):
             play_again_choice = input('\nDo you want to...\n1. Play again?\n2. View full Scoreboard\n3. End '
                                       'Game\n\nChoose a number: ')
 
-            if play_again_choice not in ['1', '2', '3']:
+            while play_again_choice not in ['1', '2', '3']:
 
                 play_again_choice = input('\nChoose a number - 1, 2 or 3: ')
 
-            elif play_again_choice == '1':
+            if play_again_choice == '1':
 
                 return 1
 
-            else:
+            elif play_again_choice == '3':
+
                 exit_game('\nThanks for playing!')
 
     elif play_again_choice == '3':
