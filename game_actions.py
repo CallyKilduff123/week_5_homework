@@ -135,6 +135,23 @@ def play(moves_dictionary, player_move, opponent_move, player_scores, opponent_s
 
 
 # ------------------------------------------------------------------------------------------------------------------
+# def statement defines the safeguard_choice function with 1 parameter
+# safeguard_choice function ensures the player inputs either 1, 2 or 3
+def safeguard_choice(menu_choice):
+
+    # while the value in play_again_choice is not in this list, execute this code
+    while menu_choice not in ['1', '2', '3']:
+        # input function reminds player to input a number
+        # strip method removes white space before and after the input string
+        # input is assigned to play_again_choice variable
+        menu_choice = input('\nChoose a number - 1, 2 or 3: ').strip()
+
+    # return statement returns menu_choice with its new value
+    # this value will be used outside the function
+    return menu_choice
+
+
+# ------------------------------------------------------------------------------------------------------------------
 # def statement defines ask_play function with 3 parameters
 # player1_score: is expecting a dictionary of wins, ties and losses for Player1
 # player2_score: is expecting a dictionary of wins, ties and losses for Player2
@@ -147,13 +164,9 @@ def ask_play(player1_score, player2_score, cpu_score):
     play_again_choice = input('\nDo you want to...\n1. Play again?\n2. View full Scoreboard\n3. End Game\n\nChoose a '
                               'number: ').strip()
 
-    # while the value in play_again_choice is not in this list, execute this code
-    while play_again_choice not in ['1', '2', '3']:
-
-        # input function reminds player to input a number
-        # strip method removes white space before and after the input string
-        # input is assigned to play_again_choice variable
-        play_again_choice = input('\nChoose a number - 1, 2 or 3: ').strip()
+    # safeguard_choice function ensures player only inputs 1, 2 or 3
+    # the new value is reassigned to play_again_choice
+    play_again_choice = safeguard_choice(play_again_choice)
 
     # if play_again_choice is equal to 1, as a string
     if play_again_choice == '1':
@@ -183,13 +196,9 @@ def ask_play(player1_score, player2_score, cpu_score):
             play_again_choice = input('\nDo you want to...\n1. Play again?\n2. View full Scoreboard\n3. End '
                                       'Game\n\nChoose a number: ')
 
-            # while the value in play_again_choice is not in this list, execute this code
-            while play_again_choice not in ['1', '2', '3']:
-
-                # input function reminds player to input a number
-                # strip method removes white space before and after the input string
-                # input is assigned to play_again_choice variable
-                play_again_choice = input('\nChoose a number - 1, 2 or 3: ').strip()
+            # safeguard_choice function ensures player only inputs 1, 2 or 3
+            # the new value is reassigned to play_again_choice
+            play_again_choice = safeguard_choice(play_again_choice)
 
             # if play_again_choice is equal to 1, as a string
             if play_again_choice == '1':
