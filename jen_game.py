@@ -50,7 +50,9 @@ while play_again == 1:
 
         # The play function executes a game and returns 2 values, representing the outcome of the game
         # The 2 new values are reassigned to player1_wins and cpu_wins, dictionaries
-        player1_wins, cpu_wins = game_actions.play(original_moves, player1, cpu_choice, player1_wins, cpu_wins)
+        player1_wins, cpu_wins = game_actions.play(moves_dictionary=original_moves, player_move=player1,
+                                                   player_scores=player1_wins, opponent_move=cpu_choice,
+                                                   opponent_scores=cpu_wins)
 
         # Concatenates and prints a string that outlines the number of wins for each player
         print('\n', '~' * 15, 'WINS', '~' * 15,
@@ -87,7 +89,9 @@ while play_again == 1:
 
         # The play function executes a game and returns 2 values, representing the outcome of the game
         # The 2 new values are reassigned to player1_wins and cpu_wins, dictionaries
-        player1_wins, player2_wins = game_actions.play(original_moves, player1, player2, player1_wins, player2_wins)
+        player1_wins, player2_wins = game_actions.play(moves_dictionary=original_moves, player_move=player1,
+                                                       player_scores=player1_wins, opponent_move=player2,
+                                                       opponent_scores=player2_wins)
 
         # Concatenates and prints a string that outlines the number of wins for each player
         print('\n', '~' * 15, 'WINS', '~' * 15,
